@@ -141,19 +141,16 @@ button {
 <audio id="music" src="song.mp3"></audio>
 
 <script>
-let countdown = document.getElementById("countdown");
-let main = document.getElementById("main");
-let timer = document.getElementById("timer");
 // COUNTDOWN LOCK
-let target = ;
+let target = new Date("April 24, 2026 00:00:00").getTime();
 
 setInterval(()=>{
   let now = new Date().getTime();
   let d = target - now;
 
-if(d < 0){
-  document.getElementById("countdown").style.display = "none";
-  document.getElementById("main").style.display = "block"; 
+  if(d < 0){
+    countdown.style.display="none";
+    main.style.display="block";
   } else {
     timer.innerHTML =
     Math.floor(d/86400000)+"d "+
@@ -200,9 +197,7 @@ function openGift(i){
 }
 
 // LETTER TYPING
-let text="Happy Birthday Yoosu 💗\nYou are my safe place.yoosun ith nallonam ishtavulle innk ariya
-karanam njan an ith indakiye ellaaathhumm babykk ntha ishtammn onnum enik areella
-athond an njan ingane okke cheythhe iloveusooomuch.\nI love you forever.";
+let text="Happy Birthday Yoosu 💗\nYou are my safe place.\nI love you forever.";
 let idx=0;
 
 function typeLetter(){
